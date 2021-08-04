@@ -56,10 +56,14 @@ namespace profilelife {
             if (!state)
                 return;
 
+            const currLife = info.life();
+
             info.showLife(false)
 
-            if (info.life() > state.maxLife) {
+            if (currLife > state.maxLife) {
                 info.setLife(state.maxLife);
+            } else if (currLife < 0) {
+                info.setLife(0);
             }
 
             let leftOffset = 2;
@@ -74,7 +78,7 @@ namespace profilelife {
                 target.print(state.name, leftOffset, topOffset, state.textColor, state.font);
                 topOffset += state.font.charHeight + 2;
             }
-            const currLife = info.life();
+
             for (let i = 0; i < state.maxLife; i++) {
                 if (i < currLife) {
                     target.drawTransparentImage(
