@@ -5,11 +5,10 @@
 //% blockGap=8
 //% block="Profile Life"
 namespace profilelife {
-
     class ProfileState {
+        profileImage: Image;
         filledLifeImage: Image;
         emptyLifeImage: Image;
-        profileImage: Image;
         name: string;
         font: image.Font;
         textColor: number;
@@ -99,7 +98,17 @@ namespace profilelife {
         return profileState;
     }
 
-    //% block
+    //% block="set profile image $profile"
+    //% profile.shadow=screen_image_picker
+    //% weight=100
+    export function setProfileImage(profile: Image) {
+        const state = init();
+        state.profileImage = profile;
+    }
+
+    //% block="set filled life image $filledImage"
+    //% filledImage.shadow=screen_image_picker
+    //% weight=40
     export function setFilledLifeImage(filledImage: Image) {
         if (!filledImage)
             return;
@@ -107,25 +116,26 @@ namespace profilelife {
         state.filledLifeImage = filledImage;
     }
 
-    //% block
+    //% block="set empty life image $emptyImage"
+    //% emptyImage.shadow=screen_image_picker
+    //% weight=30
     export function setEmptyLifeImage(emptyImage: Image) {
         const state = init();
         state.emptyLifeImage = emptyImage;
     }
 
-    //% block
-    export function setProfileImage(profile: Image) {
-        const state = init();
-        state.profileImage = profile;
-    }
-
-    //% block
+    //% block="set name to $name"
+    //% name.defl="Bird"
+    //% weight=75
     export function setName(name: string) {
         const state = init();
         state.name = name;
     }
 
-    //% block
+    //% block="set text color $textColor"
+    //% textColor.shadow="colorindexpicker";
+    //% color.defl=12
+    //% weight=70
     export function setTextColor(textColor: number) {
         const state = init();
         state.textColor = textColor;
@@ -136,7 +146,9 @@ namespace profilelife {
         state.font = font;
     }
 
-    //% block
+    //% block="set max life $maxLife"
+    //% maxLife.defl=3
+    //% weight=60
     export function setMaxLife(maxLife: number) {
         const state = init();
         state.maxLife = maxLife;
