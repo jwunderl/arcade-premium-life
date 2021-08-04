@@ -11,6 +11,8 @@ namespace profilelife {
         emptyLifeImage: Image;
         profileImage: Image;
         name: string;
+        font: image.Font;
+        textColor: number;
         maxLife: number;
 
         constructor() {
@@ -33,21 +35,26 @@ namespace profilelife {
                 . . f f f . .
             `;
             this.maxLife = 3;
+            this.font = image.font5;
+            this.textColor = 0xC;
         }
     }
 
-    const profileLifeKey = "PROFILE_LIFE_SCENE_KEY";
-    function init() {
-        const scn = game.currentScene();
-        if (scn.data[profileLifeKey])
-            return;
+    function getState(): ProfileState {
+        return game.currentScene().data[profileLifeKey] as ProfileState;
+    }
 
-        const MAX_LIFE = 3;
-        const chosenFont = image.font5;
-        game.currentScene().data[profileLifeKey] = new ProfileState();
+    const profileLifeKey = "PROFILE_LIFE_SCENE_KEY";
+    function init(): ProfileState {
+        const scn = game.currentScene();
+        let profileState = scn.data[profileLifeKey]
+        if (profileState)
+            return profileState;
+
+        profileState = game.currentScene().data[profileLifeKey] = new ProfileState();
         
-        scene.createRenderable(99, function(target: Image, camera: scene.Camera) {
-            const state = game.currentScene().data[profileLifeKey] as ProfileState;
+        scene.createRenderable(95, function(target: Image, camera: scene.Camera) {
+            const state = getState();
             if (!state)
                 return;
 
@@ -59,24 +66,25 @@ namespace profilelife {
 
             let leftOffset = 2;
             let topOffset = 2;
+
             if (state.profileImage) {
                 target.drawTransparentImage(state.profileImage, 0, 0);
                 leftOffset += state.profileImage.width;
             }
 
             if (state.name) {
-                target.print(state.name, leftOffset, topOffset, 0xF, chosenFont);
-                topOffset += chosenFont.charHeight + 2;
+                target.print(state.name, leftOffset, topOffset, state.textColor, state.font);
+                topOffset += state.font.charHeight + 2;
             }
             const currLife = info.life();
-            for (let i = 0; i < MAX_LIFE; i++) {
+            for (let i = 0; i < state.maxLife; i++) {
                 if (i < currLife) {
                     target.drawTransparentImage(
                         state.filledLifeImage,
                         leftOffset + i * (state.filledLifeImage.width + 1),
                         topOffset
                     );
-                } else {
+                } else if (state.emptyLifeImage) {
                     const filledLifeWidth = currLife * (state.filledLifeImage.width + 1);
 
                     target.drawTransparentImage(
@@ -87,6 +95,50 @@ namespace profilelife {
                 }
             }
         });
+
+        return profileState;
     }
-    init();
+
+    //% block
+    export function setFilledLifeImage(filledImage: Image) {
+        if (!filledImage)
+            return;
+        const state = init();
+        state.filledLifeImage = filledImage;
+    }
+
+    //% block
+    export function setEmptyLifeImage(emptyImage: Image) {
+        const state = init();
+        state.emptyLifeImage = emptyImage;
+    }
+
+    //% block
+    export function setProfileImage(profile: Image) {
+        const state = init();
+        state.profileImage = profile;
+    }
+
+    //% block
+    export function setName(name: string) {
+        const state = init();
+        state.name = name;
+    }
+
+    //% block
+    export function setTextColor(textColor: number) {
+        const state = init();
+        state.textColor = textColor;
+    }
+
+    export function setFont(font: image.Font) {
+        const state = init();
+        state.font = font;
+    }
+
+    //% block
+    export function setMaxLife(maxLife: number) {
+        const state = init();
+        state.maxLife = maxLife;
+    }
 }
