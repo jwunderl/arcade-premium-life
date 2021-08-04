@@ -133,7 +133,7 @@ namespace profilelife {
 
     //% block="set text color $textColor"
     //% textColor.shadow="colorindexpicker";
-    //% color.defl=12
+    //% textColor.defl=12
     //% weight=70
     export function setTextColor(textColor: number) {
         const state = init();
