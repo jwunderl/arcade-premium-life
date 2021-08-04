@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.4.45/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.2","target":"arcade","targetVersion":"1.4.45","repo":"jwunderl/arcade-premium-life"}
-// total=1438950 new=7.67% cached=87.04% other=5.29%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.4.45/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.3","target":"arcade","targetVersion":"1.4.45","repo":"jwunderl/arcade-premium-life"}
+// total=1439155 new=7.68% cached=87.03% other=5.29%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -451,7 +451,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P230927(s) {
+function _main___P236268(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -828,7 +828,7 @@ switch (step) {
     s.callLocIdx = 60; s.pc = 33; return s.tmp_0;
   case 33:
     r0 = s.retval;
-    globals.profileLifeKey___230702 = ("PROFILE_LIFE_SCENE_KEY");
+    globals.profileLifeKey___235860 = ("PROFILE_LIFE_SCENE_KEY");
     s.tmp_0 = controller_Button_onEvent__P119885_mk(s);
     s.tmp_0.arg0 = globals.A___119852;
     s.tmp_0.arg1 = 2049;
@@ -843,7 +843,7 @@ switch (step) {
     s.callLocIdx = 82; s.pc = 35; return s.tmp_0;
   case 35:
     r0 = s.retval;
-    s.tmp_0 = profilelife_setProfileImage__P230838_mk(s);
+    s.tmp_0 = profilelife_setProfileImage__P235998_mk(s);
     r0 = pxsim.image.ofBuffer(_hex172152);
     s.tmp_0.arg0 = r0;
     s.callLocIdx = 83; s.pc = 36; return s.tmp_0;
@@ -854,12 +854,12 @@ switch (step) {
     s.callLocIdx = 84; s.pc = 37; return s.tmp_0;
   case 37:
     r0 = s.retval;
-    s.tmp_0 = profilelife_setName__P230864_mk(s);
+    s.tmp_0 = profilelife_setName__P236024_mk(s);
     s.tmp_0.arg0 = "BIRDY-BIRD";
     s.callLocIdx = 85; s.pc = 38; return s.tmp_0;
   case 38:
     r0 = s.retval;
-    s.tmp_0 = profilelife_setTextColor__P230872_mk(s);
+    s.tmp_0 = profilelife_setTextColor__P236032_mk(s);
     s.tmp_0.arg0 = 15;
     s.callLocIdx = 86; s.pc = 39; return s.tmp_0;
   case 39:
@@ -868,13 +868,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P230927.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"test.ts","functionName":"<main>","argumentNames":[]}
-_main___P230927.continuations = [  ]
+_main___P236268.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"test.ts","functionName":"<main>","argumentNames":[]}
+_main___P236268.continuations = [  ]
 
-function _main___P230927_mk(s) {
+function _main___P236268_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P230927, depth: s.depth + 1,
+        parent: s, fn: _main___P236268, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1530,7 +1530,7 @@ function inline__P172146_mk(s) {
 
 
 
-function profilelife_setTextColor__P230872(s) {
+function profilelife_setTextColor__P236032(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1540,30 +1540,30 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.state___230874 = undefined;
+    s.state___236034 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = profilelife_init__P230704_mk(s);
+    s.tmp_0 = profilelife_init__P235862_mk(s);
     s.callLocIdx = 78; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
-    s.state___230874 = (r0);
-    r0 = (s.state___230874).fields["textColor"] = (s.arg0);
+    s.state___236034 = (r0);
+    r0 = (s.state___236034).fields["textColor"] = (s.arg0);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-profilelife_setTextColor__P230872.info = {"start":4164,"length":122,"line":137,"column":4,"endLine":140,"endColumn":5,"fileName":"profilelife.ts","functionName":"setTextColor","argumentNames":["textColor"]}
+profilelife_setTextColor__P236032.info = {"start":4235,"length":122,"line":141,"column":4,"endLine":144,"endColumn":5,"fileName":"profilelife.ts","functionName":"setTextColor","argumentNames":["textColor"]}
 
-function profilelife_setTextColor__P230872_mk(s) {
+function profilelife_setTextColor__P236032_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: profilelife_setTextColor__P230872, depth: s.depth + 1,
+        parent: s, fn: profilelife_setTextColor__P236032, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
-  state___230874: undefined,
+  state___236034: undefined,
   arg0: undefined,
 } }
 
@@ -1571,7 +1571,7 @@ function profilelife_setTextColor__P230872_mk(s) {
 
 
 
-function profilelife_init__P230704(s) {
+function profilelife_init__P235862(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1581,26 +1581,26 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.scn___230705 = undefined;
-    s.profileState___230708 = undefined;
+    s.scn___235863 = undefined;
+    s.profileState___235866 = undefined;
     s.tmp_0 = game_currentScene__P120512_mk(s);
     s.callLocIdx = 63; s.pc = 4; return s.tmp_0;
   case 4:
     r0 = s.retval;
-    s.scn___230705 = (r0);
-    r0 = s.scn___230705.fields["_data"];
+    s.scn___235863 = (r0);
+    r0 = s.scn___235863.fields["_data"];
     s.tmp_0 = r0;
-    r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, globals.profileLifeKey___230702);
-    s.profileState___230708 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.profileState___230708);
+    r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, globals.profileLifeKey___235860);
+    s.profileState___235866 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.profileState___235866);
     if (!r0) { step = 1; continue; }
-    r0 = s.profileState___230708;
+    r0 = s.profileState___235866;
     { step = 3; continue; }
   case 1:
   case 2:
-    r0 = pxsim_pxtcore_mkClassInstance(profilelife_ProfileState__C230675_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(profilelife_ProfileState__C235833_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = profilelife_ProfileState_constructor__P230676_mk(s);
+    s.tmp_1 = profilelife_ProfileState_constructor__P235834_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
     s.callLocIdx = 67; s.pc = 5; return s.tmp_1;
   case 5:
@@ -1612,41 +1612,41 @@ switch (step) {
     s.tmp_3 = r0;
     r0 = s.tmp_3.fields["_data"];
     s.tmp_2 = r0;
-    r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_2, globals.profileLifeKey___230702, s.tmp_0);
-    s.profileState___230708 = (s.tmp_0);
+    r0 = pxsim_pxtrt.mapSetGeneric(s.tmp_2, globals.profileLifeKey___235860, s.tmp_0);
+    s.profileState___235866 = (s.tmp_0);
     s.tmp_0 = scene_createRenderable__P120363_mk(s);
     s.tmp_0.arg0 = 95;
-    s.tmp_0.arg1 = inline__P230723;
+    s.tmp_0.arg1 = inline__P235881;
     s.tmp_0.arg2 = undefined;
     s.callLocIdx = 75; s.pc = 7; return s.tmp_0;
   case 7:
     r0 = s.retval;
-    r0 = s.profileState___230708;
+    r0 = s.profileState___235866;
   case 3:
     return leave(s, r0)
   default: oops()
 } } }
-profilelife_init__P230704.info = {"start":1182,"length":1869,"line":45,"column":4,"endLine":97,"endColumn":5,"fileName":"profilelife.ts","functionName":"init","argumentNames":[]}
+profilelife_init__P235862.info = {"start":1182,"length":1940,"line":45,"column":4,"endLine":101,"endColumn":5,"fileName":"profilelife.ts","functionName":"init","argumentNames":[]}
 
-function profilelife_init__P230704_mk(s) {
+function profilelife_init__P235862_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: profilelife_init__P230704, depth: s.depth + 1,
+        parent: s, fn: profilelife_init__P235862, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
   tmp_4: undefined,
-  scn___230705: undefined,
-  profileState___230708: undefined,
+  scn___235863: undefined,
+  profileState___235866: undefined,
 } }
 
 
 
 
 
-function inline__P230723(s) {
+function inline__P235881(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1656,94 +1656,106 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.state___230726 = undefined;
-    s.leftOffset___230740 = undefined;
-    s.topOffset___230741 = undefined;
-    s.currLife___230778 = undefined;
-    s.i___230781 = undefined;
-    s.filledLifeWidth___230807 = undefined;
+    s.state___235884 = undefined;
+    s.currLife___235889 = undefined;
+    s.leftOffset___235903 = undefined;
+    s.topOffset___235904 = undefined;
+    s.i___235941 = undefined;
+    s.filledLifeWidth___235967 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = profilelife_getState__P230698_mk(s);
-    s.callLocIdx = 68; s.pc = 16; return s.tmp_0;
-  case 16:
+    s.tmp_0 = profilelife_getState__P235856_mk(s);
+    s.callLocIdx = 68; s.pc = 18; return s.tmp_0;
+  case 18:
     r0 = s.retval;
-    s.state___230726 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.state___230726);
+    s.state___235884 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.state___235884);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    { step = 15; continue; }
+    { step = 17; continue; }
   case 1:
   case 2:
-    s.tmp_2 = info_showLife__P120203_mk(s);
-    s.tmp_2.arg0 = false;
-    s.callLocIdx = 69; s.pc = 17; return s.tmp_2;
-  case 17:
-    r0 = s.retval;
     s.tmp_2 = info_life__P120194_mk(s);
-    s.callLocIdx = 70; s.pc = 18; return s.tmp_2;
-  case 18:
+    s.callLocIdx = 69; s.pc = 19; return s.tmp_2;
+  case 19:
     r0 = s.retval;
+    s.currLife___235889 = (r0);
+    s.tmp_0 = info_showLife__P120203_mk(s);
+    s.tmp_0.arg0 = false;
+    s.callLocIdx = 70; s.pc = 20; return s.tmp_0;
+  case 20:
+    r0 = s.retval;
+    r0 = s.state___235884.fields["maxLife"];
     s.tmp_1 = r0;
-    r0 = s.state___230726.fields["maxLife"];
-    s.tmp_3 = r0;
-    r0 = (s.tmp_1 > s.tmp_3);
+    r0 = (s.currLife___235889 > s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.tmp_4 = info_setLife__P120196_mk(s);
-    r0 = s.state___230726.fields["maxLife"];
-    s.tmp_4.arg0 = r0;
-    s.callLocIdx = 71; s.pc = 19; return s.tmp_4;
-  case 19:
+    s.tmp_2 = info_setLife__P120196_mk(s);
+    r0 = s.state___235884.fields["maxLife"];
+    s.tmp_2.arg0 = r0;
+    s.callLocIdx = 71; s.pc = 21; return s.tmp_2;
+  case 21:
     r0 = s.retval;
+    { step = 6; continue; }
   case 3:
-  case 4:
-    s.leftOffset___230740 = (2);
-    s.topOffset___230741 = (2);
-    r0 = s.state___230726.fields["profileImage"];
+    r0 = (s.currLife___235889 < 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 5; continue; }
-    r0 = s.state___230726.fields["profileImage"];
+    if (!r0) { step = 4; continue; }
+    s.tmp_1 = info_setLife__P120196_mk(s);
+    s.tmp_1.arg0 = 0;
+    s.callLocIdx = 72; s.pc = 22; return s.tmp_1;
+  case 22:
+    r0 = s.retval;
+  case 4:
+  case 5:
+  case 6:
+    s.leftOffset___235903 = (2);
+    s.topOffset___235904 = (2);
+    r0 = s.state___235884.fields["profileImage"];
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 7; continue; }
+    r0 = s.state___235884.fields["profileImage"];
     s.tmp_1 = r0;
     r0 = pxsim_ImageMethods.drawTransparentImage(s.arg0, s.tmp_1, 0, 0);
-    s.tmp_0 = r0 = s.leftOffset___230740;
-    r0 = s.state___230726.fields["profileImage"];
+    s.tmp_0 = r0 = s.leftOffset___235903;
+    r0 = s.state___235884.fields["profileImage"];
     s.tmp_2 = r0;
     r0 = pxsim_ImageMethods.width(s.tmp_2);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 + s.tmp_1);
-    s.leftOffset___230740 = (r0);
-  case 5:
-  case 6:
-    r0 = s.state___230726.fields["name"];
+    s.leftOffset___235903 = (r0);
+  case 7:
+  case 8:
+    r0 = s.state___235884.fields["name"];
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 7; continue; }
+    if (!r0) { step = 9; continue; }
     s.tmp_1 = helpers_imagePrint__P119735_mk(s);
     s.tmp_1.arg0 = s.arg0;
-    r0 = s.state___230726.fields["name"];
+    r0 = s.state___235884.fields["name"];
     s.tmp_1.arg1 = r0;
-    s.tmp_1.arg2 = s.leftOffset___230740;
-    s.tmp_1.arg3 = s.topOffset___230741;
-    r0 = s.state___230726.fields["textColor"];
+    s.tmp_1.arg2 = s.leftOffset___235903;
+    s.tmp_1.arg3 = s.topOffset___235904;
+    r0 = s.state___235884.fields["textColor"];
     s.tmp_1.arg4 = r0;
-    r0 = s.state___230726.fields["font"];
+    r0 = s.state___235884.fields["font"];
     s.tmp_1.arg5 = r0;
     s.tmp_1.arg6 = undefined;
-    s.callLocIdx = 72; s.pc = 20; return s.tmp_1;
-  case 20:
+    s.callLocIdx = 73; s.pc = 23; return s.tmp_1;
+  case 23:
     r0 = s.retval;
-    s.tmp_0 = r0 = s.topOffset___230741;
+    s.tmp_0 = r0 = s.topOffset___235904;
     s.tmp_3 = if_charHeight_1_mk(s);
-    r0 = s.state___230726.fields["font"];
+    r0 = s.state___235884.fields["font"];
     s.tmp_3.arg0 = r0;
     if (!s.tmp_3.arg0.vtable.iface) {
       s.retval = pxsim_pxtrt.mapGetByString(s.tmp_3.arg0, "charHeight");
@@ -1751,40 +1763,35 @@ switch (step) {
       s.tmp_3.fn = s.tmp_3.arg0.vtable.iface["charHeight"];
       if (s.tmp_3.fn == null) { s.retval = s.tmp_3.arg0.fields["charHeight"]; }
       else if (!s.tmp_3.fn.isGetter) { s.retval = bind(s.tmp_3); }
-     else { s.callLocIdx = 73; s.pc = 21; return s.tmp_3; }
+     else { s.callLocIdx = 74; s.pc = 24; return s.tmp_3; }
     }
-  case 21:
+  case 24:
     r0 = s.retval;
     s.tmp_2 = r0;
     r0 = (s.tmp_2 + 2);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 + s.tmp_1);
-    s.topOffset___230741 = (r0);
-  case 7:
-  case 8:
-    s.tmp_0 = info_life__P120194_mk(s);
-    s.callLocIdx = 74; s.pc = 22; return s.tmp_0;
-  case 22:
-    r0 = s.retval;
-    s.currLife___230778 = (r0);
-    s.i___230781 = (0);
+    s.topOffset___235904 = (r0);
   case 9:
-    r0 = s.state___230726.fields["maxLife"];
+  case 10:
+    s.i___235941 = (0);
+  case 11:
+    r0 = s.state___235884.fields["maxLife"];
     s.tmp_1 = r0;
-    r0 = (s.i___230781 < s.tmp_1);
+    r0 = (s.i___235941 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 14; continue; }
-    r0 = (s.i___230781 < s.currLife___230778);
+    if (!r0) { step = 16; continue; }
+    r0 = (s.i___235941 < s.currLife___235889);
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
-    if (!r0) { step = 10; continue; }
+    if (!r0) { step = 12; continue; }
     s.tmp_3 = r0 = s.arg0;
-    r0 = s.state___230726.fields["filledLifeImage"];
+    r0 = s.state___235884.fields["filledLifeImage"];
     s.tmp_4 = r0;
-    s.tmp_6 = r0 = s.leftOffset___230740;
-    s.tmp_8 = r0 = s.i___230781;
-    r0 = s.state___230726.fields["filledLifeImage"];
+    s.tmp_6 = r0 = s.leftOffset___235903;
+    s.tmp_8 = r0 = s.i___235941;
+    r0 = s.state___235884.fields["filledLifeImage"];
     s.tmp_11 = r0;
     r0 = pxsim_ImageMethods.width(s.tmp_11);
     s.tmp_10 = r0;
@@ -1794,29 +1801,29 @@ switch (step) {
     s.tmp_7 = r0;
     r0 = (s.tmp_6 + s.tmp_7);
     s.tmp_5 = r0;
-    r0 = pxsim_ImageMethods.drawTransparentImage(s.tmp_3, s.tmp_4, s.tmp_5, s.topOffset___230741);
-    { step = 13; continue; }
-  case 10:
-    r0 = s.state___230726.fields["emptyLifeImage"];
+    r0 = pxsim_ImageMethods.drawTransparentImage(s.tmp_3, s.tmp_4, s.tmp_5, s.topOffset___235904);
+    { step = 15; continue; }
+  case 12:
+    r0 = s.state___235884.fields["emptyLifeImage"];
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 11; continue; }
-    s.tmp_1 = r0 = s.currLife___230778;
-    r0 = s.state___230726.fields["filledLifeImage"];
+    if (!r0) { step = 13; continue; }
+    s.tmp_1 = r0 = s.currLife___235889;
+    r0 = s.state___235884.fields["filledLifeImage"];
     s.tmp_4 = r0;
     r0 = pxsim_ImageMethods.width(s.tmp_4);
     s.tmp_3 = r0;
     r0 = (s.tmp_3 + 1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 * s.tmp_2);
-    s.filledLifeWidth___230807 = (r0);
+    s.filledLifeWidth___235967 = (r0);
     s.tmp_0 = r0 = s.arg0;
-    r0 = s.state___230726.fields["emptyLifeImage"];
+    r0 = s.state___235884.fields["emptyLifeImage"];
     s.tmp_1 = r0;
-    s.tmp_4 = r0 = s.leftOffset___230740;
-    r0 = (s.i___230781 - s.currLife___230778);
+    s.tmp_4 = r0 = s.leftOffset___235903;
+    r0 = (s.i___235941 - s.currLife___235889);
     s.tmp_6 = r0;
-    r0 = s.state___230726.fields["emptyLifeImage"];
+    r0 = s.state___235884.fields["emptyLifeImage"];
     s.tmp_9 = r0;
     r0 = pxsim_ImageMethods.width(s.tmp_9);
     s.tmp_8 = r0;
@@ -1826,27 +1833,27 @@ switch (step) {
     s.tmp_5 = r0;
     r0 = (s.tmp_4 + s.tmp_5);
     s.tmp_3 = r0;
-    r0 = (s.tmp_3 + s.filledLifeWidth___230807);
+    r0 = (s.tmp_3 + s.filledLifeWidth___235967);
     s.tmp_2 = r0;
-    r0 = pxsim_ImageMethods.drawTransparentImage(s.tmp_0, s.tmp_1, s.tmp_2, s.topOffset___230741);
-  case 11:
-  case 12:
+    r0 = pxsim_ImageMethods.drawTransparentImage(s.tmp_0, s.tmp_1, s.tmp_2, s.topOffset___235904);
   case 13:
-    r0 = (s.i___230781 + 1);
-    s.i___230781 = (r0);
-    { step = 9; continue; }
   case 14:
   case 15:
+    r0 = (s.i___235941 + 1);
+    s.i___235941 = (r0);
+    { step = 11; continue; }
+  case 16:
+  case 17:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-inline__P230723.info = {"start":1497,"length":1516,"line":53,"column":35,"endLine":94,"endColumn":9,"fileName":"profilelife.ts","functionName":"inline","argumentNames":["target","camera"]}
+inline__P235881.info = {"start":1497,"length":1587,"line":53,"column":35,"endLine":98,"endColumn":9,"fileName":"profilelife.ts","functionName":"inline","argumentNames":["target","camera"]}
 
-function inline__P230723_mk(s) {
+function inline__P235881_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P230723, depth: s.depth + 1,
+        parent: s, fn: inline__P235881, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1860,12 +1867,12 @@ function inline__P230723_mk(s) {
   tmp_9: undefined,
   tmp_10: undefined,
   tmp_11: undefined,
-  state___230726: undefined,
-  leftOffset___230740: undefined,
-  topOffset___230741: undefined,
-  currLife___230778: undefined,
-  i___230781: undefined,
-  filledLifeWidth___230807: undefined,
+  state___235884: undefined,
+  currLife___235889: undefined,
+  leftOffset___235903: undefined,
+  topOffset___235904: undefined,
+  i___235941: undefined,
+  filledLifeWidth___235967: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -22893,38 +22900,6 @@ function info_PlayerState_constructor__P120187_mk(s) {
 
 
 
-function info_life__P120194(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = info_PlayerInfo_life__P120231_mk(s);
-    s.tmp_0.arg0 = globals.player1___120243;
-    s.callLocIdx = 733; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    return leave(s, r0)
-  default: oops()
-} } }
-info_life__P120194.info = {"start":7947,"length":61,"line":274,"column":4,"endLine":276,"endColumn":5,"fileName":"pxt_modules/game/info.ts","functionName":"life","argumentNames":[]}
-
-function info_life__P120194_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: info_life__P120194, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
 function info_showLife__P120203(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
@@ -22964,7 +22939,39 @@ function info_showLife__P120203_mk(s) {
 
 
 
-function profilelife_getState__P230698(s) {
+function info_life__P120194(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = info_PlayerInfo_life__P120231_mk(s);
+    s.tmp_0.arg0 = globals.player1___120243;
+    s.callLocIdx = 733; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    return leave(s, r0)
+  default: oops()
+} } }
+info_life__P120194.info = {"start":7947,"length":61,"line":274,"column":4,"endLine":276,"endColumn":5,"fileName":"pxt_modules/game/info.ts","functionName":"life","argumentNames":[]}
+
+function info_life__P120194_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: info_life__P120194, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function profilelife_getState__P235856(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -22981,16 +22988,16 @@ switch (step) {
     s.tmp_1 = r0;
     r0 = s.tmp_1.fields["_data"];
     s.tmp_0 = r0;
-    r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, globals.profileLifeKey___230702);
+    r0 = pxsim_pxtrt.mapGetGeneric(s.tmp_0, globals.profileLifeKey___235860);
     return leave(s, r0)
   default: oops()
 } } }
-profilelife_getState__P230698.info = {"start":1009,"length":114,"line":40,"column":4,"endLine":42,"endColumn":5,"fileName":"profilelife.ts","functionName":"getState","argumentNames":[]}
+profilelife_getState__P235856.info = {"start":1009,"length":114,"line":40,"column":4,"endLine":42,"endColumn":5,"fileName":"profilelife.ts","functionName":"getState","argumentNames":[]}
 
-function profilelife_getState__P230698_mk(s) {
+function profilelife_getState__P235856_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: profilelife_getState__P230698, depth: s.depth + 1,
+        parent: s, fn: profilelife_getState__P235856, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -23140,7 +23147,7 @@ function scene_Renderable_constructor__P120359_mk(s) {
 
 
 
-function profilelife_ProfileState_constructor__P230676(s) {
+function profilelife_ProfileState_constructor__P235834(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -23155,13 +23162,13 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, profilelife_ProfileState__C230675_VT)) failedCast(r0);
+    if (!checkSubtype(r0, profilelife_ProfileState__C235833_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
-    r0 = pxsim.image.ofBuffer(_hex230682);
+    r0 = pxsim.image.ofBuffer(_hex235840);
     s.tmp_1 = r0;
     r0 = (s.tmp_0).fields["filledLifeImage"] = (s.tmp_1);
     s.tmp_0 = r0 = s.arg0;
-    r0 = pxsim.image.ofBuffer(_hex230687);
+    r0 = pxsim.image.ofBuffer(_hex235845);
     s.tmp_1 = r0;
     r0 = (s.tmp_0).fields["emptyLifeImage"] = (s.tmp_1);
     r0 = (s.arg0).fields["maxLife"] = (3);
@@ -23171,20 +23178,20 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-profilelife_ProfileState_constructor__P230676.info = {"start":342,"length":655,"line":15,"column":8,"endLine":37,"endColumn":9,"fileName":"profilelife.ts","functionName":"inline","argumentNames":["this"]}
+profilelife_ProfileState_constructor__P235834.info = {"start":342,"length":655,"line":15,"column":8,"endLine":37,"endColumn":9,"fileName":"profilelife.ts","functionName":"inline","argumentNames":["this"]}
 
-function profilelife_ProfileState_constructor__P230676_mk(s) {
+function profilelife_ProfileState_constructor__P235834_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: profilelife_ProfileState_constructor__P230676, depth: s.depth + 1,
+        parent: s, fn: profilelife_ProfileState_constructor__P235834, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   arg0: undefined,
 } }
 
-const _hex230682 = pxsim.BufferMethods.createBufferFromHex("8704070007000000c0fc0f003c33ff003c23f20fc023220f3c21f20f3c33ff00c0fc0f00")
-const _hex230687 = pxsim.BufferMethods.createBufferFromHex("8704070007000000c0fc0f00bcbbff00bccbfc0fc0cbcc0fbccbfc0fbcbbff00c0fc0f00")
+const _hex235840 = pxsim.BufferMethods.createBufferFromHex("8704070007000000c0fc0f003c33ff003c23f20fc023220f3c21f20f3c33ff00c0fc0f00")
+const _hex235845 = pxsim.BufferMethods.createBufferFromHex("8704070007000000c0fc0f00bcbbff00bccbfc0fc0cbcc0fbccbfc0fbcbbff00c0fc0f00")
 
 
 
@@ -23224,7 +23231,7 @@ function scene_Scene_data__P120422_mk(s) {
 
 
 
-function profilelife_setName__P230864(s) {
+function profilelife_setName__P236024(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -23234,30 +23241,30 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.state___230866 = undefined;
+    s.state___236026 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = profilelife_init__P230704_mk(s);
+    s.tmp_0 = profilelife_init__P235862_mk(s);
     s.callLocIdx = 77; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
-    s.state___230866 = (r0);
-    r0 = (s.state___230866).fields["name"] = (s.arg0);
+    s.state___236026 = (r0);
+    r0 = (s.state___236026).fields["name"] = (s.arg0);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-profilelife_setName__P230864.info = {"start":3925,"length":102,"line":128,"column":4,"endLine":131,"endColumn":5,"fileName":"profilelife.ts","functionName":"setName","argumentNames":["name"]}
+profilelife_setName__P236024.info = {"start":3996,"length":102,"line":132,"column":4,"endLine":135,"endColumn":5,"fileName":"profilelife.ts","functionName":"setName","argumentNames":["name"]}
 
-function profilelife_setName__P230864_mk(s) {
+function profilelife_setName__P236024_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: profilelife_setName__P230864, depth: s.depth + 1,
+        parent: s, fn: profilelife_setName__P236024, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
-  state___230866: undefined,
+  state___236026: undefined,
   arg0: undefined,
 } }
 
@@ -23409,7 +23416,7 @@ function scene_Background_image__P120257_mk(s) {
 
 
 
-function profilelife_setProfileImage__P230838(s) {
+function profilelife_setProfileImage__P235998(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -23419,30 +23426,30 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.state___230840 = undefined;
+    s.state___236000 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = profilelife_init__P230704_mk(s);
+    s.tmp_0 = profilelife_init__P235862_mk(s);
     s.callLocIdx = 76; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
-    s.state___230840 = (r0);
-    r0 = (s.state___230840).fields["profileImage"] = (s.arg0);
+    s.state___236000 = (r0);
+    r0 = (s.state___236000).fields["profileImage"] = (s.arg0);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-profilelife_setProfileImage__P230838.info = {"start":3162,"length":123,"line":102,"column":4,"endLine":105,"endColumn":5,"fileName":"profilelife.ts","functionName":"setProfileImage","argumentNames":["profile"]}
+profilelife_setProfileImage__P235998.info = {"start":3233,"length":123,"line":106,"column":4,"endLine":109,"endColumn":5,"fileName":"profilelife.ts","functionName":"setProfileImage","argumentNames":["profile"]}
 
-function profilelife_setProfileImage__P230838_mk(s) {
+function profilelife_setProfileImage__P235998_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: profilelife_setProfileImage__P230838, depth: s.depth + 1,
+        parent: s, fn: profilelife_setProfileImage__P235998, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
-  state___230840: undefined,
+  state___236000: undefined,
   arg0: undefined,
 } }
 
@@ -46804,7 +46811,7 @@ const scene_Scene__C120399_VT = mkVTable({
     "render": scene_Scene_render__P120426,
   },
 });
-const profilelife_ProfileState__C230675_VT = mkVTable({
+const profilelife_ProfileState__C235833_VT = mkVTable({
   name: "ProfileState",
   numFields: 7,
   classNo: 21,
@@ -48117,7 +48124,7 @@ const effects_SceneAnchor__C122571_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["profileLifeKey___230702"])
+const breakpoints = setupDebugger(1, ["profileLifeKey___235860"])
 
-return _main___P230927
+return _main___P236268
 })
