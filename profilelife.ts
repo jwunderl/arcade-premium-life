@@ -24,6 +24,7 @@ namespace profilelife {
         backgroundColor: number;
         borderColor: number;
         maxLife: number;
+        invisible: boolean;
 
         constructor() {
             this.filledLifeImage = img`
@@ -66,7 +67,7 @@ namespace profilelife {
         
         scene.createRenderable(95, function(target: Image, camera: scene.Camera) {
             const state = getState();
-            if (!state)
+            if (!state || state.invisible)
                 return;
 
             if (state.backgroundColor || state.borderColor) {
@@ -141,7 +142,7 @@ namespace profilelife {
     }
 
     //% block="set profile image $profile"
-    //% blockid="profilelife_profileImage"
+    //% blockId="profilelife_profileImage"
     //% profile.shadow=screen_image_picker
     //% weight=100
     export function setProfileImage(profile: Image) {
@@ -150,7 +151,7 @@ namespace profilelife {
     }
 
     //% block="set filled life image $filledImage"
-    //% blockid="profilelife_filledImage"
+    //% blockId="profilelife_filledImage"
     //% filledImage.shadow=screen_image_picker
     //% weight=40
     export function setFilledLifeImage(filledImage: Image) {
@@ -161,7 +162,7 @@ namespace profilelife {
     }
 
     //% block="set empty life image $emptyImage"
-    //% blockid="profilelife_emptyImg"
+    //% blockId="profilelife_emptyImg"
     //% emptyImage.shadow=screen_image_picker
     //% weight=30
     export function setEmptyLifeImage(emptyImage: Image) {
@@ -170,7 +171,7 @@ namespace profilelife {
     }
 
     //% block="set name to $name"
-    //% blockid="profilelife_setName"
+    //% blockId="profilelife_setName"
     //% name.defl="Bird"
     //% weight=75
     export function setName(name: string) {
@@ -180,7 +181,7 @@ namespace profilelife {
 
     //% block="set text color $textColor"
     //% textColor.shadow="colorindexpicker"
-    //% blockid="profilelife_textColor"
+    //% blockId="profilelife_textColor"
     //% textColor.defl=12
     //% weight=70
     export function setTextColor(textColor: number) {
@@ -189,7 +190,7 @@ namespace profilelife {
     }
 
     //% block="set background $bkgd border $border"
-    //% blockid="profilelife_bkgdColor"
+    //% blockId="profilelife_bkgdColor"
     //% bkgd.shadow="colorindexpicker"
     //% bkgd.defl=1
     //% border.shadow="colorindexpicker"
@@ -208,11 +209,21 @@ namespace profilelife {
     }
 
     //% block="set max life $maxLife"
-    //% blockid="profilelife_maxLife"
+    //% blockId="profilelife_maxLife"
     //% maxLife.defl=3
     //% weight=60
     export function setMaxLife(maxLife: number) {
         const state = init();
         state.maxLife = maxLife;
+    }
+
+    //% block="set life invisible $on"
+    //% blockId="profilelife_invisibletoggle"
+    //% on.shadow="toggleOnOff"
+    //% on.defl=true
+    //% weight=50
+    export function setInvisible(on: boolean) {
+        const state = init();
+        state.invisible = on;
     }
 }
