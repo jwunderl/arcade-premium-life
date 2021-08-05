@@ -5,6 +5,14 @@
 //% block="Profile Life"
 namespace profilelife {
     const profileLifeKey = "PROFILE_LIFE_SCENE_KEY";
+    
+    /**
+     * TODOs:
+     * * support a 'break after' on max life to move to new line for zelda style (multi row life)
+     * * support partial hearts? e.g. make it so they can pass an array of images separate for filledLifeImage,
+     *     and then each life becomes 1/array.length hearts
+     * * support positioning the renderable -- e.g. peg to corner of the screen with an offset
+     */
 
     class ProfileState {
         profileImage: Image;
