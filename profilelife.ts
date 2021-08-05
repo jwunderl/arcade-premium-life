@@ -4,6 +4,8 @@
 //% blockGap=8
 //% block="Profile Life"
 namespace profilelife {
+    const profileLifeKey = "PROFILE_LIFE_SCENE_KEY";
+
     class ProfileState {
         profileImage: Image;
         filledLifeImage: Image;
@@ -11,6 +13,8 @@ namespace profilelife {
         name: string;
         font: image.Font;
         textColor: number;
+        backgroundColor: number;
+        borderColor: number;
         maxLife: number;
 
         constructor() {
@@ -35,6 +39,8 @@ namespace profilelife {
             this.maxLife = 3;
             this.font = image.font5;
             this.textColor = 0xC;
+            this.backgroundColor = 0x0;
+            this.borderColor = 0x0;
         }
     }
 
@@ -42,7 +48,6 @@ namespace profilelife {
         return game.currentScene().data[profileLifeKey] as ProfileState;
     }
 
-    const profileLifeKey = "PROFILE_LIFE_SCENE_KEY";
     function init(): ProfileState {
         const scn = game.currentScene();
         let profileState = scn.data[profileLifeKey]
@@ -55,6 +60,32 @@ namespace profilelife {
             const state = getState();
             if (!state)
                 return;
+
+            if (state.backgroundColor || state.borderColor) {
+                let fullWidth = 3;
+                if (state.profileImage) fullWidth += state.profileImage.width;
+                fullWidth += Math.max(
+                    (state.name || "").length * state.font.charWidth,
+                    state.maxLife * (1 + Math.max(
+                        state.filledLifeImage.width,
+                        state.emptyLifeImage ? state.emptyLifeImage.width : 0  
+                    ))
+                );
+                let fullHeight = Math.max(
+                    state.profileImage ? state.profileImage.width : 0,
+                    (state.name ? state.font.charHeight + 2 : 0) + Math.max(
+                        state.filledLifeImage.height,
+                        state.emptyLifeImage ? state.emptyLifeImage.height : 0
+                    ) + 4
+                )
+
+                if (state.backgroundColor)
+                    target.fillRect(0, 0, fullWidth, fullHeight, state.backgroundColor);
+                if (state.borderColor) {
+                    target.drawRect(-1, -1, fullWidth + 2, fullHeight + 2, state.borderColor);
+                }
+            }
+
 
             const currLife = info.life();
 
@@ -102,6 +133,7 @@ namespace profilelife {
     }
 
     //% block="set profile image $profile"
+    //% blockid="profilelife_profileImage"
     //% profile.shadow=screen_image_picker
     //% weight=100
     export function setProfileImage(profile: Image) {
@@ -110,6 +142,7 @@ namespace profilelife {
     }
 
     //% block="set filled life image $filledImage"
+    //% blockid="profilelife_filledImage"
     //% filledImage.shadow=screen_image_picker
     //% weight=40
     export function setFilledLifeImage(filledImage: Image) {
@@ -120,6 +153,7 @@ namespace profilelife {
     }
 
     //% block="set empty life image $emptyImage"
+    //% blockid="profilelife_emptyImg"
     //% emptyImage.shadow=screen_image_picker
     //% weight=30
     export function setEmptyLifeImage(emptyImage: Image) {
@@ -128,6 +162,7 @@ namespace profilelife {
     }
 
     //% block="set name to $name"
+    //% blockid="profilelife_setName"
     //% name.defl="Bird"
     //% weight=75
     export function setName(name: string) {
@@ -136,7 +171,8 @@ namespace profilelife {
     }
 
     //% block="set text color $textColor"
-    //% textColor.shadow="colorindexpicker";
+    //% textColor.shadow="colorindexpicker"
+    //% blockid="profilelife_textColor"
     //% textColor.defl=12
     //% weight=70
     export function setTextColor(textColor: number) {
@@ -144,12 +180,27 @@ namespace profilelife {
         state.textColor = textColor;
     }
 
+    //% block="set background $bkgd border $border"
+    //% blockid="profilelife_bkgdColor"
+    //% bkgd.shadow="colorindexpicker"
+    //% bkgd.defl=1
+    //% border.shadow="colorindexpicker"
+    //% border.defl=15
+    //% weight=65
+    export function setBackgroundBorder(bkgd: number, border: number) {
+        const state = init();
+        state.backgroundColor = bkgd;
+        state.borderColor = border
+    }
+
     export function setFont(font: image.Font) {
+        if (!font) return;
         const state = init();
         state.font = font;
     }
 
     //% block="set max life $maxLife"
+    //% blockid="profilelife_maxLife"
     //% maxLife.defl=3
     //% weight=60
     export function setMaxLife(maxLife: number) {
