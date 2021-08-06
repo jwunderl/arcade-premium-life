@@ -81,7 +81,7 @@ namespace profilelife {
                     ))
                 );
                 let fullHeight = Math.max(
-                    state.profileImage ? state.profileImage.width : 0,
+                    state.profileImage ? state.profileImage.height : 0,
                     (state.name ? state.font.charHeight + 2 : 0) + Math.max(
                         state.filledLifeImage.height,
                         state.emptyLifeImage ? state.emptyLifeImage.height : 0
@@ -217,7 +217,7 @@ namespace profilelife {
         state.maxLife = maxLife;
     }
 
-    //% block="set life invisible $on"
+    //% block="set profile invisible $on"
     //% blockId="profilelife_invisibletoggle"
     //% on.shadow="toggleOnOff"
     //% on.defl=true
